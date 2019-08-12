@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="AM-AddJson" version="SHA-512:80bdb9347e0233d1471bc853f8af5e9e7c597b49ee4c8d7bc2a391364f0da5527178b486737f7614984fcd436ddb0bcecd1bde8ffc4d46ebaae0a10051fac4a1"/>
+        <VersionInfo resourceName="AM-AddTimeStampToLocation" version="SHA-512:35ab338b5b9989e0dfa86ab9e2adee0b65236527a32d7226b1e76e6324ed8e2f66ce10b8cf0e7c28e7b3778edc3be7c9595ac564ae034a0c1cdac85b3d825bff"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:b0eaefb79a1320bb63452cdfc037b94db29b3227ba11f5d578570eb70ea45300d564373e4219dace70b8034d85005a1fe9d0bfd36a9310c820a93e557449a3cd"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:8118279ca4371236aaec7fdb79cf985777240b3eb220e67cdd22ca8cd3427e1a012fd7b2eee9d1f112b74d8165b7ef1a6b89eaaa0b6ddd8b069839182bfdf33b"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:ad4b032ec26c6ce75306a49625ef2aede72eb46fdafde8a04f6bfaa6c22986db6e6426641603131afa350762b64422c1addd2bae6a27a4d4b6c3ffa56210ee76"/>
+    </TargetEndpoints>
+</Manifest>

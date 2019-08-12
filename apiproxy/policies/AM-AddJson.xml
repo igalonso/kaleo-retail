@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-AddJson">
+    <DisplayName>AM-AddJson</DisplayName>
+    <AssignVariable>
+        <Name>target.url</Name>
+        <Value>https://igngar-test-retail.firebaseio.com/db/{proxy.pathsuffix}.json</Value>
+        <Ref/>
+    </AssignVariable>
+</AssignMessage>

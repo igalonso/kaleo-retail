@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="OrderTracking-1">
+    <Basepaths>/</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1565625069036</CreatedAt>
+    <CreatedBy>igngar@google.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>OrderTracking-1</DisplayName>
+    <LastModifiedAt>1565625069036</LastModifiedAt>
+    <LastModifiedBy>igngar@google.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:624e86cb12e41a21cdb3ea8fad416b600bfeb2af907a0a42d89019431bbc48fcaddbaf6668be812bb72967441dc24448354b7378cef61f4c3d868174a82eb9fa</ManifestVersion>
+    <Policies>
+        <Policy>AM-AddJson</Policy>
+        <Policy>AM-AddTimeStampToLocation</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

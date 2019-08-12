@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-AddTimeStampToLocation">
+    <DisplayName>AM-AddTimeStampToLocation</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>proxy.pathsuffix</Name>
+        <Value>{proxy.pathsuffix}/{system.time}</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

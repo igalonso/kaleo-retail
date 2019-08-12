@@ -1,0 +1,244 @@
+openapi: 3.0.0
+info:
+  title: "Global logistics"
+  version: "0.1"
+  contact:
+    name: Ignacio Garcia
+    email: igngar@google.com
+  
+paths:
+  /tracking-orders:
+    get:
+      summary: Get all tracking orders
+      operationId: Get all tracking orders
+      description: List all the tracking orders the retail platform has.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/tracking-orders'
+    post:
+      summary: Create a new tracking order
+      operationId: Create tracking order
+      description: Create a new tracking order associated with an order.
+      requestBody:
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tracking-order-post'
+                
+      responses:
+        '201':
+          description: Created
+          
+  /tracking-orders/{uuid}:
+    get:
+      summary: Get a specific tracking order
+      operationId: Get a specific tracking order
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tracking-orders'
+    put:
+      summary: Update a specific tracking order
+      operationId: Update a tracking order
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location:
+                  type: string
+                notes:
+                  type: string
+      responses:
+        '200':
+          description: OK
+
+  /tracking-orders/{uuid}/locations:
+    get: 
+      summary: all locations from tracking order
+      operationId: Get locations from tracking order
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    post: 
+      summary: Add location to tracking order
+      operationId: Add Location
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/location-post'
+      responses:
+        '200':
+          description: OK
+
+  /tracking-orders/{uuid}/locations/{locid}:
+    get: 
+      summary: Get specific location to tracker order.
+      operationId: Get specific location
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: locid
+          in: path
+          description: location id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+  /tracking-orders/{uuid}/notes:
+    get:
+      summary: Get notes to tracker order.
+      operationId: Get notes
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+    post: 
+      summary: Add notes to tracking order
+      operationId: Add notes
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notes-post'
+      responses:
+        '200':
+          description: OK
+
+  /tracking-orders/{uuid}/notes/{noteid}:
+
+    get: 
+      summary: Get specific note to tracker order.
+      operationId: Get specific note
+      parameters:
+        - name: uuid
+          in: path
+          description: tracking order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: noteid
+          in: path
+          description: note id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+
+
+components:
+  schemas:
+    tracking-orders:
+      type: object
+      properties:
+        order:
+          type: string
+        location:
+          type: string
+        courier:
+          type: string
+        sent-date:
+          type: string
+        status:
+          type: string
+        notes:
+          type: string
+    tracking-order-post:
+      type: object
+      properties:
+        location:
+          type: string
+        courier:
+          type: string
+        order:
+          type: string
+        sent-date:
+          type: string
+        status:
+          type: string
+        notes:
+          type: string
+    location-post:
+      type: object 
+      properties:
+        location:
+          type: string
+        timestamp:
+          type: string
+    
+    notes-post:
+      type: object 
+      properties:
+        note:
+          type: string
+        timestamp:
+          type: string
