@@ -5,7 +5,10 @@
     <PreFlow name="PreFlow">
         <Request>
             <Step>
-                <Name>AM-AddJson</Name>
+                <Name>AssignMessage-SetTargetVariables</Name>
+            </Step>
+            <Step>
+                <Name>JS-AddJson</Name>
             </Step>
         </Request>
         <Response/>
@@ -17,6 +20,9 @@
     <Flows/>
     <HTTPTargetConnection>
         <Properties/>
-        <URL>https://igngar-test-retail.firebaseio.com/db/</URL>
+        <LoadBalancer>
+            <Server name="retail-endpoint"/>
+        </LoadBalancer>
+        <Path>{dynamicPath}</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>

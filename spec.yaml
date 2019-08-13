@@ -232,8 +232,6 @@ components:
       properties:
         location:
           type: string
-        timestamp:
-          type: string
     
     notes-post:
       type: object 

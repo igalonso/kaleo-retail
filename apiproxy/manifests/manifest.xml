@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest name="manifest">
     <Policies>
-        <VersionInfo resourceName="AM-AddJson" version="SHA-512:80bdb9347e0233d1471bc853f8af5e9e7c597b49ee4c8d7bc2a391364f0da5527178b486737f7614984fcd436ddb0bcecd1bde8ffc4d46ebaae0a10051fac4a1"/>
-        <VersionInfo resourceName="AM-AddTimeStampToLocation" version="SHA-512:35ab338b5b9989e0dfa86ab9e2adee0b65236527a32d7226b1e76e6324ed8e2f66ce10b8cf0e7c28e7b3778edc3be7c9595ac564ae034a0c1cdac85b3d825bff"/>
+        <VersionInfo resourceName="AssignMessage-SetTargetVariables" version="SHA-512:be8102eced709f72b82e302eefbab8ee1357878ef8d431f67d62734114753716577164255b7c4fabb94f1545d6f743a2338c03b87bffdc58c99d90210c7f1218"/>
+        <VersionInfo resourceName="JS-AddJson" version="SHA-512:6a4388cb8c2dc289bebb47584f2bfe7caf61c3071e73178a67d5adc49b43eb1dcf309f7ba43a8ce928ccb75a50353c8d566370034ff60ac0eb1fcfa72e3b407e"/>
+        <VersionInfo resourceName="JS-GetDynamicPath" version="SHA-512:bcc2366925e513a210c7c1fd37d3e7b921d37ee4229257c6a2e6abd51612289bca4e22e648f325aa5bf01a8470ac0f9801bc571ec867853c675df621e6f87e2b"/>
+        <VersionInfo resourceName="JS-InsertTimestampToPayload" version="SHA-512:798ae6188abf0947ddc67b8396d35b38aa9508d2a9c123750a71ec3dc6506b1b0fe378fd255083669e2d8c81c446a268583958db3c5715c56f7dfdebe0b7f9ed"/>
     </Policies>
     <ProxyEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:b0eaefb79a1320bb63452cdfc037b94db29b3227ba11f5d578570eb70ea45300d564373e4219dace70b8034d85005a1fe9d0bfd36a9310c820a93e557449a3cd"/>
+        <VersionInfo resourceName="default" version="SHA-512:5817f3454919322a7b99c9d6fec34959745ee30d09cc421172a9971ef31b628116cd8f44ca5cb5903c670330fba31a31b683286e20ef734ea90a5edc2e926c71"/>
     </ProxyEndpoints>
     <Resources>
+        <VersionInfo resourceName="jsc://AddJson.js" version="SHA-512:53a9824bf0842b24da6a2a42affd559fbcd90eadcc5767520239271b4b892be7934ae9c4a2b30922b72bb504fa59b90a9c2c2d04e9eb0c1b0c76578c70cd845b"/>
+        <VersionInfo resourceName="jsc://AddTimestampToPath.js" version="SHA-512:1ecfe0bd1058133d51e0773eb30605d155d113b52f4d7e0b665e413a3e82bf3522c8ec655bb9a4a6c34bb4b010707f6c00dec543da7d51f5016d52b9f965fd38"/>
+        <VersionInfo resourceName="jsc://InsertTimestampToPayload.js" version="SHA-512:38b8d05f032d3509add9009f5c28361c3f5695028f37e484a8f9905465e00a43d3e160f2a90fc7edabf8cf073673825cafe76acf6f4ba608bf0f99b16cec1e6d"/>
+        <VersionInfo resourceName="jsc://JS-GetDynamicPath.js" version="SHA-512:1025cbc8df6adb5dbe7002ec1734472b40b23c6443ee2c1a74eb8b6fb8ea599a411dcf3921fd92a2a9d577db16d607ea22041fa503301c3e9d9e055abd41ce86"/>
         <VersionInfo resourceName="openapi://association.json" version="SHA-512:8118279ca4371236aaec7fdb79cf985777240b3eb220e67cdd22ca8cd3427e1a012fd7b2eee9d1f112b74d8165b7ef1a6b89eaaa0b6ddd8b069839182bfdf33b"/>
     </Resources>
     <SharedFlows/>
     <TargetEndpoints>
-        <VersionInfo resourceName="default" version="SHA-512:ad4b032ec26c6ce75306a49625ef2aede72eb46fdafde8a04f6bfaa6c22986db6e6426641603131afa350762b64422c1addd2bae6a27a4d4b6c3ffa56210ee76"/>
+        <VersionInfo resourceName="default" version="SHA-512:d02d3b7bd0d315e5807bf8109d73a5896c18e17f3bf260584ce8c1b853654175ec07a845fe1efc00e2e6a68a65c82e1594b168e48b250fe3faf192d6ccad512d"/>
     </TargetEndpoints>
 </Manifest>
