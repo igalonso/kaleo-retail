@@ -29,7 +29,7 @@ paths:
         content:
             application/json:
               schema:
-                $ref: '#/components/schemas/tracking-order-post'
+                $ref: '#/components/schemas/tracking-orders'
                 
       responses:
         '201':
@@ -69,19 +69,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                location:
-                  type: string
-                notes:
-                  type: string
+              $ref: '#/components/schemas/tracking-orders'
       responses:
         '200':
           description: OK
 
   /tracking-orders/{uuid}/locations:
     get: 
-      summary: all locations from tracking order
+      summary: Get all locations
       operationId: Get locations from tracking order
       parameters:
         - name: uuid
@@ -109,7 +104,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/location-post'
+              $ref: '#/components/schemas/location'
       responses:
         '200':
           description: OK
@@ -117,7 +112,7 @@ paths:
   /tracking-orders/{uuid}/locations/{locid}:
     get: 
       summary: Get specific location to tracker order.
-      operationId: Get specific location
+      operationId: Get a location
       parameters:
         - name: uuid
           in: path
@@ -166,7 +161,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/notes-post'
+              $ref: '#/components/schemas/notes'
       responses:
         '200':
           description: OK
@@ -175,7 +170,7 @@ paths:
 
     get: 
       summary: Get specific note to tracker order.
-      operationId: Get specific note
+      operationId: Get a note
       parameters:
         - name: uuid
           in: path
@@ -202,41 +197,73 @@ components:
       properties:
         order:
           type: string
-        location:
-          type: string
+          description: Kaleo order ID.
         courier:
           type: string
+          description: Courier in charge of the delivery
         sent-date:
           type: string
+          description: Date when the package was sent
         status:
           type: string
-        notes:
+          description: Status of the package
+          enum:
+          - in-transit
+          - delivered
+          - missed
+          - contact courier
+        courier-tracking-id:
           type: string
-    tracking-order-post:
-      type: object
-      properties:
-        location:
+          description: Internal tracking ID
+        origin-country:
           type: string
-        courier:
+          description: Courier country of origin
+        destination-country:
           type: string
-        order:
+          description: Receiver country at destination
+        destination-postal-code:
           type: string
-        sent-date:
+          description: Receiver postal code at destination
+        emails: 
           type: string
-        status:
+          description: Emails separated with comas to send notifications upon arrival
+        order-promised-delivery-date:
           type: string
-        notes:
+          description: Maximum date of delivery
+        delivery-type:
           type: string
-    location-post:
+          description: Type of delivery for the order
+          enum:
+          - door-delivery
+          - pickup-at-store
+          - pickup-at-courier
+        courier-contact-number:
+          type: string
+          description: Courier phone number in case of incident.
+      required:
+      - order
+      - courier
+      - sent-date
+      - status
+      - courier-tracking-id
+      - origin-country
+      - destination-country
+      - destination-postal-code
+      - emails
+      - delivery-type
+      - courier-contact-number
+    location:
       type: object 
       properties:
         location:
           type: string
+      required:
+      - location
     
-    notes-post:
+    notes:
       type: object 
       properties:
         note:
           type: string
-        timestamp:
-          type: string
+      required:
+      - note
