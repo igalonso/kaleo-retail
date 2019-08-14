@@ -15,11 +15,15 @@
         <Response/>
     </PostFlow>
     <Flows>
-        <Flow name="Get all tracking orders">
-            <Description>Get all tracking orders</Description>
-            <Request/>
+        <Flow name="Not Found">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RaiseFault-NotFound</Name>
+                </Step>
+            </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders") and (request.verb = "GET")</Condition>
+            <Condition>((proxy.pathsuffix MatchesPath "/tracking-orders/") or (proxy.pathsuffix MatchesPath "/tracking-orders")) and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="Create tracking order">
             <Description>Create a new tracking order</Description>
@@ -39,20 +43,14 @@
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*") and (request.verb = "PUT")</Condition>
         </Flow>
-        <Flow name="Get locations from order">
-            <Description>all locations from tracking order</Description>
+        <Flow name="Get locations from tracking order">
+            <Description>Get all locations</Description>
             <Request/>
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/locations") and (request.verb = "GET")</Condition>
         </Flow>
-        <Flow name="Get a location from order">
-            <Description>all locations from tracking order</Description>
-            <Request/>
-            <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/locations/*") and (request.verb = "GET")</Condition>
-        </Flow>
-        <Flow name="Add a location to and order">
-            <Description>all locations from tracking order</Description>
+        <Flow name="Add Location">
+            <Description>Add location to tracking order</Description>
             <Request>
                 <Step>
                     <Name>JS-InsertTimestampToPayload</Name>
@@ -61,9 +59,33 @@
             <Response/>
             <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/locations") and (request.verb = "POST")</Condition>
         </Flow>
+        <Flow name="Get a location">
+            <Description>Get specific location to tracker order.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/locations/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Get notes">
+            <Description>Get notes to tracker order.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/notes") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="Add notes">
+            <Description>Add notes to tracking order</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/notes") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="Get a note">
+            <Description>Get specific note to tracker order.</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/tracking-orders/*/notes/*") and (request.verb = "GET")</Condition>
+        </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/</BasePath>
+        <BasePath>/kaleo-retail</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
