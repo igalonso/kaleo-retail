@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  title: "Kaleo retail - orders"
+  version: "0.1"
+  contact:
+    name: Ignacio Garcia
+    email: igngar@google.com
+  
+paths:
+  /orders:
+    get:
+      summary: Get all orders
+      operationId: Get all orders
+      description: Get all orders
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/orders'
+    post:
+      summary: Create a new order
+      operationId: Create order
+      description: Create a new order.
+      requestBody:
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/orders'
+                
+      responses:
+        '201':
+          description: Created
+          
+  /orders/{uuid}:
+    get:
+      summary: Get a specific order
+      operationId: Get a specific order
+      parameters:
+        - name: uuid
+          in: path
+          description: order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/orders'
+    put:
+      summary: Update a specific order
+      operationId: Update a order
+      parameters:
+        - name: uuid
+          in: path
+          description: order uuid
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/orders'
+      responses:
+        '200':
+          description: OK
+  
+
+
+components:
+  schemas:
+    orders:
+      type: object
+      properties:
+        billing-address:
+          type: string
+          description: Billing Address.
+        cart-id:
+          type: string
+          description: Cart token with products purchased
+        date-purchased:
+          type: string
+          description: Date when the customer purchased this cart.
+        currency:
+          type: string  
+          description: Status of the package
+          enum:
+          - USD
+          - EUR
+          - GBP
+        payment-details:
+          type: string
+          description: Payment detaols
+        shipping-address:
+          type: string
+          description: Shipping address.
+        total-price:
+          type: string
+          description: Total price of the order.  
+        user-id:
+          type: string
+          description: User ID that purchased the order
+      required:
+      - cart-token
+      - billing-address
+      - currency
+      - payment-details
+      - shipping-address
+      - total-price
+      - user-id
+        

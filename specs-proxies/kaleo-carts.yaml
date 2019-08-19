@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: "Kaleo retail - orders"
+  version: "0.1"
+  contact:
+    name: Ignacio Garcia
+    email: igngar@google.com
+  
+paths:
+  /carts:
+    get:
+      summary: Get all carts with items
+      operationId: Get all carts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/carts'
+    post:
+      summary: Post a new cart
+      operationId: Post a new cart
+      requestBody:
+        content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/carts'
+      responses:
+        '201':
+          description: Created
+components:
+  schemas:
+    carts:
+      type: object
+      properties:
+        customer-id:
+          type: string 
+          description: Id of the customer with the info
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/items'
+    items:
+      type: object 
+      properties:
+        name:
+          type: string
+          description: Name of the item
+        id:
+          type: string
+          description: id of the item
+        price:
+          type: string 
+          description: price of the item
+        description:
+          type: string
+          description: description of the item
+        quantity:
+          type: string
+          description: number of items of the same
+        image:
+          type: string
+          description: URL of an image of the product

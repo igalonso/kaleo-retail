@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "0b486895-01b3-4291-bbeb-9385fd2728cc",
+		"name": "Kaleo-Retail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Kaleo-tracking-orders",
+			"item": [
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courier\": \"mrw_spain\",\n    \"courier-tracking-id\":\"543662426462\",\n    \"origin-country\":\"France\",\n    \"destination-country\":\"Spain\",\n    \"desitination-postal-code\":\"28045\",\n    \"emails\":\"example@example2.com\",\n    \"order-promised-delivery-date\":\"2019-08-27\",\n    \"delivery-type\":\"door-delivery\",\n    \"courier-contact-number\":\"+34901234567\",\n    \"order\": \"52345346234252346\",\n    \"sent-date\": \"2019-08-12T14:40\",\n    \"status\": \"in-transit\"\n}\n"
+						},
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"tracking-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders?apikey=ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"tracking-orders"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq?apikey=ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"tracking-orders",
+								"-LmEZiI0Fx0n6xwpKcRq"
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"location\":\"50.41650,-4.70260\"\n}"
+						},
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"tracking-orders",
+								"-LmEZiI0Fx0n6xwpKcRq",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LOCATIONS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"tracking-orders",
+								"-LmEZiI0Fx0n6xwpKcRq",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kaleo-orders",
+			"item": [
+				{
+					"name": "POST ORDER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"billing-address\": \"Calle a\",\n  \"cart-token\": \"-LmdKUrniLMIUsUiFGdq\",\n  \"date-purchased\": \"2019-08-12T14:40\",\n  \"currency\": \"USD\",\n  \"payment-details\": \"card\",\n  \"shipping-address\": \"Calle a\",\n  \"total-price\": \"34.67\",\n  \"user-id\": \"2342151255\"\n}"
+						},
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/orders",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ORDERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/orders",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CART",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\": [\n        {\n            \"description\": \"mobile phone\",\n            \"id\": \"324634534523\",\n            \"image\": \"https://images-na.ssl-images-amazon.com/images/I/61GX8OcHCvL._SX569_.jpg\",\n            \"name\": \"Mobile Phone\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        },\n        {\n            \"description\": \"A nice clock\",\n            \"id\": \"4353463447\",\n            \"image\": \"https://www.muji.eu/img/prd/400/4547315915224_400.jpg\",\n            \"name\": \"Clock\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        },\n        {\n            \"description\": \"A nice Laptop\",\n            \"id\": \"32534363624\",\n            \"image\": \"https://zdnet1.cbsistatic.com/hub/i/r/2019/04/17/1f68c3a6-495e-4325-bc16-cc531812f0ec/thumbnail/770x433/84ff4194826e8303efb771cd377a854f/chuwi-herobook-header.jpg\",\n            \"name\": \"Laptop\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo-orders/carts",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo-orders",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kaleo-carts",
+			"item": [
+				{
+					"name": "GET CART",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/carts/-LmdKUrniLMIUsUiFGdq",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"carts",
+								"-LmdKUrniLMIUsUiFGdq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL CARTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://igngar-eval-test.apigee.net/kaleo/carts/",
+							"protocol": "http",
+							"host": [
+								"igngar-eval-test",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"kaleo",
+								"carts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "LttGmb3xNCnT2qc0iI1G6d6GpnMyt6IK",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "apikey",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "38708455-d2e5-49ab-889f-e76bd5a96247",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b2fc0ba5-517a-443d-b065-2d31083be46b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
