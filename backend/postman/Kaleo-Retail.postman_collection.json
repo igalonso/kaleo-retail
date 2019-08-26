@@ -22,15 +22,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"courier\": \"mrw_spain\",\n    \"courier-tracking-id\":\"543662426462\",\n    \"origin-country\":\"France\",\n    \"destination-country\":\"Spain\",\n    \"desitination-postal-code\":\"28045\",\n    \"emails\":\"example@example2.com\",\n    \"order-promised-delivery-date\":\"2019-08-27\",\n    \"delivery-type\":\"door-delivery\",\n    \"courier-contact-number\":\"+34901234567\",\n    \"order\": \"52345346234252346\",\n    \"sent-date\": \"2019-08-12T14:40\",\n    \"status\": \"in-transit\"\n}\n"
+							"raw": "{\n    \"courier\": \"mrw_spain\",\n    \"courier-tracking-id\":\"543662426462\",\n    \"origin-country\":\"France\",\n    \"destination-country\":\"Spain\",\n    \"destination-postal-code\":\"28045\",\n    \"emails\":\"example@example2.com\",\n    \"order-promised-delivery-date\":\"2019-08-27\",\n    \"delivery-type\":\"door-delivery\",\n    \"courier-contact-number\":\"+34901234567\",\n    \"order\": \"52345346234252346\",\n    \"sent-date\": \"2019-08-12T14:40\",\n    \"status\": \"in-transit\"\n}\n"
 						},
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/tracking-orders",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -46,22 +43,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders?apikey=ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/tracking-orders",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
 								"tracking-orders"
-							],
-							"query": [
-								{
-									"key": "apikey",
-									"value": "ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N"
-								}
 							]
 						}
 					},
@@ -73,14 +61,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq?apikey=ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq?apikey=ZSEpX3DohXoR3sbFDiBI6Uc4r84RGF6N",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
+								"",
 								"kaleo",
 								"tracking-orders",
 								"-LmEZiI0Fx0n6xwpKcRq"
@@ -112,12 +98,9 @@
 							"raw": "{\n\t\"location\":\"50.41650,-4.70260\"\n}"
 						},
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -135,12 +118,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/tracking-orders/-LmEZiI0Fx0n6xwpKcRq/locations",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -174,12 +154,9 @@
 							"raw": "{\n  \"billing-address\": \"Calle a\",\n  \"cart-token\": \"-LmdKUrniLMIUsUiFGdq\",\n  \"date-purchased\": \"2019-08-12T14:40\",\n  \"currency\": \"USD\",\n  \"payment-details\": \"card\",\n  \"shipping-address\": \"Calle a\",\n  \"total-price\": \"34.67\",\n  \"user-id\": \"2342151255\"\n}"
 						},
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/orders",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/orders",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -195,12 +172,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/orders",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/orders",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -227,12 +201,9 @@
 							"raw": "{\n    \"products\": [\n        {\n            \"description\": \"mobile phone\",\n            \"id\": \"324634534523\",\n            \"image\": \"https://images-na.ssl-images-amazon.com/images/I/61GX8OcHCvL._SX569_.jpg\",\n            \"name\": \"Mobile Phone\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        },\n        {\n            \"description\": \"A nice clock\",\n            \"id\": \"4353463447\",\n            \"image\": \"https://www.muji.eu/img/prd/400/4547315915224_400.jpg\",\n            \"name\": \"Clock\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        },\n        {\n            \"description\": \"A nice Laptop\",\n            \"id\": \"32534363624\",\n            \"image\": \"https://zdnet1.cbsistatic.com/hub/i/r/2019/04/17/1f68c3a6-495e-4325-bc16-cc531812f0ec/thumbnail/770x433/84ff4194826e8303efb771cd377a854f/chuwi-herobook-header.jpg\",\n            \"name\": \"Laptop\",\n            \"price\": \"14.5\",\n            \"quantity\": \"1\"\n        }\n    ]\n}"
 						},
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo-orders/carts",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo-orders/carts",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo-orders",
@@ -253,12 +224,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/carts/-LmdKUrniLMIUsUiFGdq",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/carts/-LmdKUrniLMIUsUiFGdq",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -275,12 +243,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://igngar-eval-test.apigee.net/kaleo/carts/",
-							"protocol": "http",
+							"raw": "{{ENDPOINT}}/kaleo/carts/",
 							"host": [
-								"igngar-eval-test",
-								"apigee",
-								"net"
+								"{{ENDPOINT}}"
 							],
 							"path": [
 								"kaleo",
@@ -298,13 +263,13 @@
 		"type": "apikey",
 		"apikey": [
 			{
-				"key": "in",
-				"value": "query",
+				"key": "value",
+				"value": "7RRvVPkDFWEzQ1DaSZnuzNYjd8aGAAUD",
 				"type": "string"
 			},
 			{
-				"key": "value",
-				"value": "LttGmb3xNCnT2qc0iI1G6d6GpnMyt6IK",
+				"key": "in",
+				"value": "query",
 				"type": "string"
 			},
 			{
@@ -334,6 +299,14 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "42c45b06-dcc7-4662-b166-abcae6bb22ad",
+			"key": "ENDPOINT",
+			"value": "https://emea-poc13-test.apigee.net/v1",
+			"type": "string"
 		}
 	]
 }
