@@ -109,6 +109,11 @@
             $(document).ready(function() {
                 $('select').formSelect();
                 
+                var tempTrackingId = localStorage.getItem('orderTrackingId');
+   		        if (tempTrackingId != undefined) {
+                    $("#tracking_id").val(tempTrackingId);
+                }
+
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var latlon = position.coords.latitude + "," + position.coords.longitude;
 

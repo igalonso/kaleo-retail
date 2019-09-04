@@ -96,6 +96,7 @@ export default {
             if (self.$root.orderTrackingId) {
               if (self.localTrackingId != self.$root.orderTrackingId.trim()) {
                 self.localTrackingId = self.$root.orderTrackingId.trim();
+                localStorage.setItem('orderTrackingId', self.localTrackingId);
 
                 // Get order address
                 axios.get('https://emea-poc13-test.apigee.net/v1/kaleo/tracking-orders/' + self.localTrackingId + '?apikey=Ai8RrOvxa0DjdAODEVyUGQB9Kv9cqncd').then(function (response) {
