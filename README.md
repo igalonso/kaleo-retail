@@ -1,6 +1,5 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 # Kaleo Retail
 **Kaleo Retail** leverages **Apigee and Firebase** to create an end-to-end retail integration use-case between a webshop and a logistics delivery partner.
@@ -15,8 +14,18 @@ The **Digital Value Chain** in this showcase how integration can be facilitated 
     <div class="col s12 m4 l4">
         **Kaleo Developer Portal**
     </div>
-    <div class="col s12 m4 l4">
-        **GoNOW Logistics App**
-    </div>        
+    <div class="card">
+        <div class="card-image">
+            <img src="images/sample-1.jpg">
+            <span class="card-title">Card Title</span>
+        </div>
+        <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+            <a href="#">This is a link</a>
+        </div>
+    </div>     
 </div>
 
