@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147094029-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-147094029-1');
+        </script>
+        
+        <title>GoNOW Logistics</title>
+
+        <link rel="icon" href="gonow.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
+
+        <style>
+            body {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1 0 auto;
+            }
+        </style>   
+    </head>
+    <body>
+        <noscript>
+            <strong>We're sorry but sports-shop doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+
+        <nav class="orange darken-3">
+            <div class="nav-wrapper" style="padding-left: 10px;">
+                <a href="#" class="brand-logo">GoNOW Logistics<i class="material-icons" style="font-size: 40px;">local_shipping</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">ABOUT</a></li>
+                    <li><a href="sass.html">DRIVER</a></li>
+                    <li><a href="sass.html">EMERGENCY</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="container">
+
+                <div class="col s12 m6 l6">
+                    <div class="card" id="step-1">
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4"><b>Package Tracking</b></span>
+                            <div class="row m-top-15">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12 m12 l12 m-top-15">
+                                            <input id="tracking_id" type="text" value="">
+                                            <label for="tracking_id">Tracking Id</label> 
+                                        </div>
+                                        <div class="input-field col s12 m12 l12 m-top-15">
+                                            <input id="company" type="text" class="validate">
+                                            <label for="company">Company (optional)</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <select>
+                                                <option value="" disabled selected>Choose action</option>
+                                                <option value="1">Pick-up</option>
+                                                <option value="2">Transfer</option>
+                                                <option value="3">Deliver</option>
+                                            </select>
+                                            <label>Action</label>
+                                        </div>
+                                        <div class="input-field col s12 m12 l12 m-top-15">
+                                            <input id="location" type="text" class="validate">
+                                            <label class="active" for="location">Location</label>
+                                            <p>
+                                                <label>
+                                                    <input type="checkbox" class="filled-in" checked="checked" />
+                                                    <span>Use device location</span>
+                                                </label>
+                                            </p>  
+                                        </div>  
+                                    </div>
+                                    <a id="submitButton" class="waves-effect waves-light btn right"><i class="material-icons right">my_location</i>LOG</a>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>          
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer orange darken-3">
+            <div class="container">
+
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('select').formSelect();
+                
+                var tempTrackingId = localStorage.getItem('orderTrackingId');
+   		        if (tempTrackingId != undefined) {
+                    $("#tracking_id").val(tempTrackingId);
+                }
+
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+                    $("#location").val(latlon);
+
+                    M.updateTextFields();
+                });
+
+                $("#submitButton").click(function() {
+                    axios.post("https://emea-poc13-test.apigee.net/v1/kaleo/tracking-orders/" + $("#tracking_id").val() + "/locations?apikey=Ai8RrOvxa0DjdAODEVyUGQB9Kv9cqncd", 
+                    {
+                        "location": $("#location").val()
+                    }
+                    ).then(function (response) {
+     
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });                 
+                });
+
+            });
+        </script>
+    </body>
+</html>
