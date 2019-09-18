@@ -1,31 +1,8 @@
 <template>
-  <div style="height: 100%; white-space: nowrap;">
-    <img src="../assets/nike-shirt1.jpeg" height="100%" width="auto">
-    <img src="../assets/nike-shirt2.jpeg" height="100%" width="auto">
-    <img src="../assets/nike-shirt3.jpeg" height="100%" width="auto">
-    <!-- <span class="promo-text" style="">Summer NIKE Sale</span> -->
-    <div class="stage">
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-    </div>    
+  <div style="white-space: nowrap; overflow: hidden;">
+    <!-- <img v-bind:src="imgUrl" height="auto" width="100%">   -->
+     <img :src="require('../assets/' + imgUrl)" height="auto" width="100%">  
+     <span class="promo-text2">{{promoText}}</span>
   </div>
 </template>
 
@@ -33,13 +10,26 @@
 export default {
   name: 'ProductShowcase',
   props: {
-    msg: String
+    imgUrl: String,
+    promoText: String
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+  .promo-text2 {
+    font-family: "Futura","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 1000;
+    font-size: 60px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+  }
 
   .promo-text {
     -webkit-text-stroke: 1px white;

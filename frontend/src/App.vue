@@ -1,7 +1,7 @@
 <template>
   <div ref="bar" id="app">
     <Navbar/>
-      <Showcase /> 
+    <Showcase /> 
     <div class="container">
       <br>
       <h5 class="blue-text">Featured Products</h5>
