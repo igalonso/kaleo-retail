@@ -31,7 +31,7 @@ The Kaleo Retail Webshop is a simple webshop where you can add items your basket
 
 ## Architecture
 
-Architecture diagram coming soon.
+<img src="img/kaleo-retail-architecture.png" width="400px">
 
 ## Deployment
 
